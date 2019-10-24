@@ -77,170 +77,170 @@ public class TemperatureConverter extends Application
 		//We display the stage
 		stage.show();
 	}
-    
-    public void initTextFormatters()
-    {
-    	/*
-    	 * The TextFormatter of the Celsius TextField:
-    	 * This TextFormatter accept a new character only if the text remains a number
-    	 * (positive or negative). It should also accept the scientific numbers with the format
-    	 * xxEx where E means a power of ten.
-    	 */
-    	textFormatterC = new TextFormatter<>(character -> 
-        {
-        	/*
-        	 * TODO: 8.(Going furhter) Associate a TextFormatter to textFieldF to ensure a 
-        	 * valid character input (e.g., 23, 23.345, -21, 3E -02).
-        	 */	
-        	
-            return character;
-        });
-    	
-    	/*
-    	 * The TextFormatter of the Fahrenheit TextField:
-    	 * This TextFormatter accept a new character only if the text remains a number
-    	 * (positive or negative). It should also accept the scientific numbers with the format
-    	 * xxEx where E means a power of ten.
-    	 */
-    	textFormatterF = new TextFormatter<>(character -> 
-        {
-        	/*
-        	 * TODO: 8.(Going furhter) Associate a TextFormatter to textFieldF to ensure a 
-        	 * valid character input (e.g., 23, 23.345, -21, 3E -02).
-        	 */	
-        	
-            return character;
-        });
-    }
+	
+	public void initTextFormatters()
+	{
+		/*
+		* The TextFormatter of the Celsius TextField:
+		* This TextFormatter accept a new character only if the text remains a number
+		* (positive or negative). It should also accept the scientific numbers with the format
+		* xxEx where E means a power of ten.
+		*/
+		textFormatterC = new TextFormatter<>(character -> 
+		{
+			/*
+			 * TODO: 8.(Going furhter) Associate a TextFormatter to textFieldF to ensure a 
+			 * valid character input (e.g., 23, 23.345, -21, 3E -02).
+			 */	
+			 
+			 return character;
+		});
 
-    /**
-     * Initialize the Listeners of the UI elements
-     */
-    public void initListener()
-    {
-    	/*
-    	 * Listener of the Celsius TextField: 
-    	 * Convert the value of the Celsius TextField from Celsius to Fahrenheit when the "ENTER"
-    	 * key is hit on the keyboard (while focusing the Celsius TextField)
-    	 */
-    	textFieldCListener = new EventHandler<KeyEvent>() 
-        {
-    		@Override
-            public void handle(KeyEvent e)
-            {
-    			//We get the code of the key pressed and we test if it is "ENTER"
-    			if (e.getCode().equals(KeyCode.ENTER)) 
-                {
-    				//If the key was "ENTER"
+		/*
+		* The TextFormatter of the Fahrenheit TextField:
+		* This TextFormatter accept a new character only if the text remains a number
+		* (positive or negative). It should also accept the scientific numbers with the format
+		* xxEx where E means a power of ten.
+		*/
+		textFormatterF = new TextFormatter<>(character -> 
+		{
+			/*
+			 * TODO: 8.(Going furhter) Associate a TextFormatter to textFieldF to ensure a 
+			 * valid character input (e.g., 23, 23.345, -21, 3E -02).
+			 */	
+			 
+			 return character;
+		});
+	}
+
+	/**
+	 * Initialize the Listeners of the UI elements
+	 */
+	public void initListener()
+	{
+		/*
+		 * Listener of the Celsius TextField: 
+		 * Convert the value of the Celsius TextField from Celsius to Fahrenheit when the "ENTER"
+		 * key is hit on the keyboard (while focusing the Celsius TextField)
+		 */
+		textFieldCListener = new EventHandler<KeyEvent>() 
+		{
+			@Override
+			public void handle(KeyEvent e)
+			{
+				//We get the code of the key pressed and we test if it is "ENTER"
+				if (e.getCode().equals(KeyCode.ENTER)) 
+				{
+					//If the key was "ENTER"
     				
-    				//We get the text displays in the Celsius TextField.
-    				String value = textFieldC.getText();
-    				
-    				//We try if there is no error when running the following code
-                    try 
-                    {
-                    	//We create a float from the value in the Celsius TextField
-                    	float valC = new Float(value);
-                    	//We calculate the value in Fahrenheit
-                        float valF = valC * 1.8f + 32;
-                        //We display the value in Fahrenheit in the Fahrenheit TextField
-                        textFieldF.setText(Float.toString(valF));
-                    }
-                    //If we got an error after running the code above
-                    catch (Exception exp) 
-                    {
-                    	//We empty the Fahrenheit TextField
-                    	textFieldF.setText("");
-                    	//We empty the Celsius TextField
-                        textFieldC.setText("");
-                    }
-                }
-    		}
-    	};
+					//We get the text displays in the Celsius TextField.
+					String value = textFieldC.getText();
+					
+					//We try if there is no error when running the following code
+					try 
+					{
+						//We create a float from the value in the Celsius TextField
+						float valC = new Float(value);
+						//We calculate the value in Fahrenheit
+						float valF = valC * 1.8f + 32;
+						//We display the value in Fahrenheit in the Fahrenheit TextField
+						textFieldF.setText(Float.toString(valF));
+					}
+					//If we got an error after running the code above
+					catch (Exception exp) 
+					{
+						//We empty the Fahrenheit TextField
+						textFieldF.setText("");
+						//We empty the Celsius TextField
+						textFieldC.setText("");
+					}
+				}
+			}
+		};
 
-    	/*
-    	 * Listener of the Fahrenheit TextField:
-    	 * Convert the value of the Fahrenheit TextField from Fahrenheit to Celsius when the "ENTER"
-    	 * key is hit on the keyboard (while focusing the Fahrenheit TextField)
-    	 */
-        textFieldFListener = new EventHandler<KeyEvent>() 
-        {
-        	@Override
-            public void handle(KeyEvent e) 
-            {
-        		/*
-            	 * TODO: 5. Fill in the textFieldFListener in order to do the conversion from
-            	 * Fahrenheit to Celsius. Associate it with the text box of the Fahrenheit value.
-            	 */	
-            }     		
-        };
+		/*
+		 * Listener of the Fahrenheit TextField:
+		 * Convert the value of the Fahrenheit TextField from Fahrenheit to Celsius when the "ENTER"
+		 * key is hit on the keyboard (while focusing the Fahrenheit TextField)
+		 */
+		textFieldFListener = new EventHandler<KeyEvent>() 
+		{
+			@Override
+			public void handle(KeyEvent e) 
+			{
+				/*
+				 * TODO: 5. Fill in the textFieldFListener in order to do the conversion from
+				 * Fahrenheit to Celsius. Associate it with the text box of the Fahrenheit value.
+				 */	
+			}     		
+		};
 
-        /*
-         * Listener of the "Reset" Button:
-         * Reset the value in the two TextFields (when the "Reset" Button is pressed)
-         */
-        buttonResetListener = new EventHandler<ActionEvent>()
-        {
-        	@Override
-        	public void handle(ActionEvent event) 
-        	{
-        		/*
-        		 * TODO: 7. Fill in the buttonResetListener in order to empty both text boxes.
-        		 * Associate it to the "Reset" button.
-        		 */	
-        	}
-        };
+		/*
+		 * Listener of the "Reset" Button:
+		 * Reset the value in the two TextFields (when the "Reset" Button is pressed)
+		 */
+		buttonResetListener = new EventHandler<ActionEvent>()
+		{
+			@Override
+			public void handle(ActionEvent event) 
+			{
+				/*
+				 * TODO: 7. Fill in the buttonResetListener in order to empty both text boxes.
+				 * Associate it to the "Reset" button.
+				 */	
+			}
+		};
 
-        /*
-         * Listener of the "Close" Button:
-         * Close the application (when the "Close" Button is pressed)
-         */
-        buttonCloseListener = new EventHandler<ActionEvent>() 
-        {
-         @Override
-            public void handle(ActionEvent event) 
-            {
-        	 //We quit the application
-                Platform.exit();
-            }
-        };
-    }
+		/*
+		 * Listener of the "Close" Button:
+		 * Close the application (when the "Close" Button is pressed)
+		 */
+		buttonCloseListener = new EventHandler<ActionEvent>() 
+		{
+			@Override
+			public void handle(ActionEvent event) 
+			{
+				//We quit the application
+				Platform.exit();
+			}
+		};
+	}
 
-    /**
-     * Initialize the UI elements
-     * @param root The root pane that will contain all the other elements
-     */
-    public void initGUI(Pane root)
-    {
-    	/*
-    	 * TODO: 2. Complete the function initGUI() by using the class FlowPane and
-    	 * layout panes of your choice.  
-    	 */
-    	
-    	/*
-    	 * TODO: 3. Make sure the widgets are aligned and that their location remains
-    	 * consistent while resizing the window.
-    	 */
-    	
-    	/*
-    	 * TODO: 4. The textFieldCListener reads a floating value in the Celsius text box
-    	 * when the user press "enter", converts it from Celsius to Fahrenheit, and writes
-    	 * the result in the Fahrenheit text box. Associate this event handler to the text
-    	 * box of the Celsius value.
-    	 */
-    	
-    	/*
-    	 * TODO: 6. The buttonCloseListener closes the window. Associate it to the "Close" button.
-    	 */
-    }
+	/**
+	 * Initialize the UI elements
+	 * @param root The root pane that will contain all the other elements
+	 */
+	public void initGUI(Pane root)
+	{
+		/*
+		 * TODO: 2. Complete the function initGUI() by using the class FlowPane and
+		 * layout panes of your choice.  
+		 */
+		
+		/*
+		 * TODO: 3. Make sure the widgets are aligned and that their location remains
+		 * consistent while resizing the window.
+		 */
+		
+		/*
+		 * TODO: 4. The textFieldCListener reads a floating value in the Celsius text box
+		 * when the user press "enter", converts it from Celsius to Fahrenheit, and writes
+		 * the result in the Fahrenheit text box. Associate this event handler to the text
+		 * box of the Celsius value.
+		 */
+		
+		/*
+		 * TODO: 6. The buttonCloseListener closes the window. Associate it to the "Close" button.
+		 */
+	}
 
-    /**
-     * The main function should never be changed
-     * @param args The arguments given when you launch the application in command line
-     */
-    public static void main(String[] args) 
-    {
-    	//We launch the application
-        launch(args);
-    }
+	/**
+	 * The main function should never be changed
+	 * @param args The arguments given when you launch the application in command line
+	 */
+	public static void main(String[] args) 
+	{
+		//We launch the application
+		launch(args);
+	}
 }
