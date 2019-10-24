@@ -6,12 +6,12 @@ The aim of this exercise is to create a temperature converter containing:
   - **Two text boxes** to enter and display the temperature values
   - **Two buttons** to reset the text boxes and close the window
 
-*To import this project in eclipse, you should open Eclipse and follow these steps:
+_To import this project in eclipse, you should open Eclipse and follow these steps:
   1) Go to File \> Import...
   2) Select Git \> Projects from Git
   3) Select Clone URI
   4) Fill the URI box with `https://github.com/IntroductionProgIS/Exercise1.git` (All the other parts should be automatically filled)
-  5) Click on "Next", "Next" and "Finish"*
+  5) Click on "Next", "Next" and "Finish"_
 
 <p align="center"><img src="/img/tempconvH.jpg" width="300"></p>
 
