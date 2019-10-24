@@ -22,61 +22,61 @@ import javafx.stage.Stage;
 public class TemperatureConverter extends Application 
 {
 	//Attributes
-    private Button buttonReset ;
-    private Button buttonClose;
-    private Label labelC ;
-    private Label labelF ;
-    private TextField textFieldC ;
-    private TextField textFieldF ;
-    private EventHandler<KeyEvent> textFieldCListener;
-    private EventHandler<KeyEvent> textFieldFListener;
-    private EventHandler<ActionEvent> buttonResetListener;
-    private EventHandler<ActionEvent> buttonCloseListener;
-    private TextFormatter<Object> textFormatterC;
-    private TextFormatter<Object> textFormatterF;
-
-    @Override
-    public void start(Stage stage) throws Exception
-    {
-    	/*
-    	 * The application represents a JavaFX application.
-    	 * The stage is the high level container of the application.
-    	 * The scene is the element that contains the visual components
-    	 */
+	private Button buttonReset ;
+	private Button buttonClose;
+	private Label labelC ;
+	private Label labelF ;
+	private TextField textFieldC ;
+	private TextField textFieldF ;
+	private EventHandler<KeyEvent> textFieldCListener;
+	private EventHandler<KeyEvent> textFieldFListener;
+	private EventHandler<ActionEvent> buttonResetListener;
+	private EventHandler<ActionEvent> buttonCloseListener;
+	private TextFormatter<Object> textFormatterC;
+	private TextFormatter<Object> textFormatterF;
+	
+	@Override
+	public void start(Stage stage) throws Exception
+	{
+		/*
+		 * The application represents a JavaFX application.
+		 * The stage is the high level container of the application.
+		 * The scene is the element that contains the visual components
+		 */
     	
-    	//We define a root pane which will contains all the other elements
-        FlowPane root = new FlowPane();
+    		//We define a root pane which will contains all the other elements
+		FlowPane root = new FlowPane();
         
-        //We create a scene that contains root as a root pane
-        Scene scene = new Scene(root); 
-        
-        //We set the height of the stage
-        stage.setHeight(155);
-        stage.setMaxHeight(225);
-        stage.setMinHeight(155);
-        //We set the width of the stage
-        stage.setWidth(351);
-        stage.setMaxWidth(351);
-        stage.setMinWidth(180);        
-        
-        //We initialize the TextFormatters of the TextField components
-        initTextFormatters();
-        
-        //We initialize the listeners of our UI components
-        initListener();
-        
-        //We initialize the User Interface (UI) of the application
-        initGUI(root);
-        
-        //We give a title to our stage
-        stage.setTitle("Temperature Converter");
-        
-        //We display the scene we just created in the stage
-        stage.setScene(scene);
-        
-        //We display the stage
-        stage.show();
-    }
+		//We create a scene that contains root as a root pane
+		Scene scene = new Scene(root); 
+		
+		//We set the height of the stage
+		stage.setHeight(155);
+		stage.setMaxHeight(225);
+		stage.setMinHeight(155);
+		//We set the width of the stage
+		stage.setWidth(351);
+		stage.setMaxWidth(351);
+		stage.setMinWidth(180);        
+		
+		//We initialize the TextFormatters of the TextField components
+		initTextFormatters();
+		
+		//We initialize the listeners of our UI components
+		initListener();
+		
+		//We initialize the User Interface (UI) of the application
+		initGUI(root);
+		
+		//We give a title to our stage
+		stage.setTitle("Temperature Converter");
+		
+		//We display the scene we just created in the stage
+		stage.setScene(scene);
+		
+		//We display the stage
+		stage.show();
+	}
     
     public void initTextFormatters()
     {
