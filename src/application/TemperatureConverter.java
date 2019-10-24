@@ -88,60 +88,12 @@ public class TemperatureConverter extends Application
     	 */
     	textFormatterC = new TextFormatter<>(character -> 
         {
-        	//If a character has been changed (added or deleted)
-            if (character.isContentChange()) 
-            {
-            	//If the TextField is empty
-                if (character.getControlNewText().length() == 0) 
-                {
-                	//We accept the change
-                    return character;
-                }
-                //If the full text in the TextField is - (minus)
-                else if(character.getControlNewText().equals("-"))
-                {
-                	//We accept the change
-                	return character;
-                }
-                //If there is something in the TextField
-                else if(character.getControlNewText().length() > 1)
-                {
-                	//If the last character is 'E' (ten power) and the previous one was not 'E' or '-' (minus)
-                	if(character.getControlNewText().charAt(character.getControlNewText().length()  - 1) == 'E'
-                			&& character.getControlNewText().charAt(character.getControlNewText().length()  - 2) != 'E'
-                			&& character.getControlNewText().charAt(character.getControlNewText().length()  - 2) != '-')
-                	{
-                		//We accept the change
-                		return character;
-                	}
-                	//If the last character is '-' (minus) and the previous one was 'E' (ten power)
-                	else if(character.getControlNewText().charAt(character.getControlNewText().length()  - 1) == '-'
-                			&& character.getControlNewText().charAt(character.getControlNewText().length()  - 2) == 'E')
-                	{
-                		//We accept the change
-                		return character;
-                	}
-                }
-                //If the case is not mentioned above, we try the following code
-                try 
-                {
-                	//We parse the character to a float
-                	Float.parseFloat(character.getControlNewText());
-                	
-                	//We accept the change
-                	return character;
-                } 
-                //If we got an error while running the code above
-                catch (NumberFormatException e) 
-                {
-                	//We do not accept the change
-                }
-                //We do not accept the change
-                return null;
-            }
-            
-            //If there is nothing new, we do nothing
-            return null;
+        	/*
+        	 * TODO: 8.(Going furhter) Associate a TextFormatter to textFieldF to ensure a 
+        	 * valid character input (e.g., 23, 23.345, -21, 3E -02).
+        	 */	
+        	
+            return character;
         });
     	
     	/*
@@ -152,60 +104,12 @@ public class TemperatureConverter extends Application
     	 */
     	textFormatterF = new TextFormatter<>(character -> 
         {
-        	//If a character has been changed (added or deleted)
-            if (character.isContentChange()) 
-            {
-            	//If the TextField is empty
-                if (character.getControlNewText().length() == 0) 
-                {
-                	//We accept the change
-                    return character;
-                }
-                //If the full text in the TextField is - (minus)
-                else if(character.getControlNewText().equals("-"))
-                {
-                	//We accept the change
-                	return character;
-                }
-                //If there is something in the TextField
-                else if(character.getControlNewText().length() > 1)
-                {
-                	//If the last character is 'E' (ten power) and the previous one was not 'E' or '-' (minus)
-                	if(character.getControlNewText().charAt(character.getControlNewText().length()  - 1) == 'E'
-                			&& character.getControlNewText().charAt(character.getControlNewText().length()  - 2) != 'E'
-                			&& character.getControlNewText().charAt(character.getControlNewText().length()  - 2) != '-')
-                	{
-                		//We accept the change
-                		return character;
-                	}
-                	//If the last character is '-' (minus) and the previous one was 'E' (ten power)
-                	else if(character.getControlNewText().charAt(character.getControlNewText().length()  - 1) == '-'
-                			&& character.getControlNewText().charAt(character.getControlNewText().length()  - 2) == 'E')
-                	{
-                		//We accept the change
-                		return character;
-                	}
-                }
-                //If the case is not mentioned above, we try the following code
-                try 
-                {
-                	//We parse the character to a float
-                	Float.parseFloat(character.getControlNewText());
-                	
-                	//We accept the change
-                	return character;
-                } 
-                //If we got an error while running the code above
-                catch (NumberFormatException e) 
-                {
-                	//We do not accept the change
-                }
-                //We do not accept the change
-                return null;
-            }
-            
-            //If there is nothing new, we do nothing
-            return null;
+        	/*
+        	 * TODO: 8.(Going furhter) Associate a TextFormatter to textFieldF to ensure a 
+        	 * valid character input (e.g., 23, 23.345, -21, 3E -02).
+        	 */	
+        	
+            return character;
         });
     }
 
@@ -264,33 +168,11 @@ public class TemperatureConverter extends Application
         	@Override
             public void handle(KeyEvent e) 
             {
-        		//We get the code of the key pressed and we test if it is "ENTER"
-            	if (e.getCode().equals(KeyCode.ENTER)) 
-            	{
-            		//If the key was "ENTER"
-            		
-            		//We get the text displays in the Fahrenheit TextField.
-                    String value = textFieldF.getText();
-                    //We try if there is no error when running the following code
-                    try 
-                    {
-                    	//We create a float from the value in the Fahrenheit TextField
-                        float valF = new Float(value);
-                        //We calculate the value in Celsius
-                        float valC = (valF - 32) / 1.8f;
-                        //We display the value in Celsius in the Celsius TextField
-                        textFieldC.setText(Float.toString(valC));
-                    } 
-                    //If we got an error after running the code above
-                    catch (Exception exp) 
-                    {
-                    	//We empty the Fahrenheit TextField
-                        textFieldF.setText("");
-                        //We empty the Celsius TextField
-                        textFieldC.setText("");
-                    }
-            	}
-            }
+        		/*
+            	 * TODO: 5. Fill in the textFieldFListener in order to do the conversion from
+            	 * Fahrenheit to Celsius. Associate it with the text box of the Fahrenheit value.
+            	 */	
+            }     		
         };
 
         /*
@@ -302,10 +184,10 @@ public class TemperatureConverter extends Application
         	@Override
         	public void handle(ActionEvent event) 
         	{
-        		//We empty the Fahrenheit TextField
-        		textFieldF.setText("");
-        		//We empty the Celsius TextField
-        		textFieldC.setText("");
+        		/*
+            	 * TODO: 7. Fill in the buttonResetListener in order to empty both text boxes.
+            	 * Associate it to the "Reset" button.
+            	 */	
         	}
         };
 
@@ -330,94 +212,28 @@ public class TemperatureConverter extends Application
      */
     public void initGUI(Pane root)
     {
-    	/* CELSIUS */
-        
-    	//We create the Celsius pane
-        VBox paneC = new VBox();       
-        //We set a padding so that the elements are correctly placed
-        /*
-         * Java Doc: 
-         * An Insets object is a representation of the borders of a container. It specifies the
-         * space that a container must leave at each of its edges. The space can be a border, a
-         * blank space, or a title.
-         */
-        paneC.setPadding(new Insets(10, 10, 10, 10));        
-        //We add that pane to our root pane
-        root.getChildren().add(paneC);
-        
-        //We create the label for the Celsius part
-        labelC = new Label("Celsius");
-        //We correctly place the label
-        labelC.setPadding(new Insets(0, 0, 10, 0));
-        //We add this Label to the Celsius pane
-        paneC.getChildren().add(labelC);
-        
-        //We create the Textfield for the Celsius part
-        textFieldC = new TextField("");
-        //We add this TextField to the Celsius pane
-        paneC.getChildren().add(textFieldC);   
-        
-        //We set the action associated to the TextField
-        textFieldC.setOnKeyPressed(textFieldCListener);
-        //We set the TextFormatter of the TextField
-        textFieldC.setTextFormatter(textFormatterC);
-        
-        /* FAHRENHEIT */
-        
-        //We create the Fahrenheit pane
-        VBox paneF = new VBox();
-        //We set a padding so that the elements are correctly placed
-        paneF.setPadding(new Insets(10, 10, 10, 10));
-        //We add that pane to our root pane
-        root.getChildren().add(paneF);
-        
-        //We create the label for the Fahrenheit part
-        labelF = new Label("Fahrenheit");
-        //We correctly place the label
-        labelF.setPadding(new Insets(0, 0, 10, 0));
-        //We add this Label to the Fahrenheit pane
-        paneF.getChildren().add(labelF);
-        
-        //We create the TextField for the Fahrenheit part
-        textFieldF = new TextField("");
-        //We add this TextField to the Fahrenheit pane
-        paneF.getChildren().add(textFieldF);
-        
-        //We set the action associated to the TextField
-        textFieldF.setOnKeyPressed(textFieldFListener);
-        //We set the TextFormatter of the TextField
-        textFieldF.setTextFormatter(textFormatterF);
-        
-        /* BUTTONS */
-        
-        //We create the Buttons pane
-        HBox paneButtons = new HBox();
-        //We set a padding so that the elements are correctly placed
-		paneButtons.setPadding(new Insets(10, 10, 10, 10));
-		//We set the space between two elements of the HBox
-		paneButtons.setSpacing(10); 
-		//We set the alignement of each element in a box of the HBox
-		paneButtons.setAlignment(Pos.CENTER_RIGHT);
-		//We add the pane for the buttons to the root pane
-		root.getChildren().add(paneButtons);
-        
-        //We create the "Reset" button
-        buttonReset = new Button("Reset");
-        //We set the width of the "Reset" Button
-        buttonReset.setPrefWidth(70);
-		//We add the button "Reset" to the buttons pane
-        paneButtons.getChildren().add(buttonReset);
-        //We set the action associated to the button
-        buttonReset.setOnAction(buttonResetListener);
-        
-        //We create the "Close" button
-        buttonClose = new Button("Close");
-        //We set the width of the "Close" Button
-        buttonClose.setPrefWidth(70);
-        //We add the button "Close" to the buttons pane
-        paneButtons.getChildren().add(buttonClose);
-        //We set the action associated to the button
-        buttonClose.setOnAction(buttonCloseListener);   
+    	/*
+    	 * TODO: 2. Complete the function initGUI() by using the class FlowPane and
+    	 * layout panes of your choice.  
+    	 */
+    	
+    	/*
+    	 * TODO: 3. Make sure the widgets are aligned and that their location remains
+    	 * consistent while resizing the window.
+    	 */
+    	
+    	/*
+    	 * TODO: 4. The textFieldCListener reads a floating value in the Celsius text box
+    	 * when the user press "enter", converts it from Celsius to Fahrenheit, and writes
+    	 * the result in the Fahrenheit text box. Associate this event handler to the text
+    	 * box of the Celsius value.
+    	 */
+    	
+    	/*
+    	 * TODO: 6. The buttonCloseListener closes the window. Associate it to the "Close" button.
+    	 */
+    	
+    	
     }
 
     /**
