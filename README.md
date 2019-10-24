@@ -9,8 +9,8 @@ The aim of this exercise is to create a temperature converter containing:
 
 <p align="center"><img src="/img/tempconvH.jpg" width="300"></p>
 
-1) Download the **TempConverter.java** file.
-2) Complete the function `initGUI()` in the file **TempConverter.java** by using the class `GridPane` and layout panes of your choice to make the resulting window look like the pictured above.
+1) Download the **TemperatureConverter.java** file.
+2) Complete the function `initGUI()` in the file **TemperatureConverter.java** by using the class `FlowPane` and layout panes of your choice to make the resulting window look like the pictured above.
 3) Make sure the widgets are aligned and that their location remains consistent while resizing the window as in the following picture:
 
 
