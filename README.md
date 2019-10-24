@@ -18,6 +18,6 @@ The aim of this exercise is to create a temperature converter containing:
 
 4) The `textFieldCListener` reads a floating value in the Celsius text box when the user press "enter", converts it from Celsius to Fahrenheit, and writes the result in the Fahrenheit text box. Associate this event handler to the text box of the Celsius value.
 5) Fill in the `textFieldFListener` in order to do the conversion from Fahrenheit to Celsius. Associate it with the text box of the Fahrenheit value.
-6) The `buttonCloseListener` closes the window. Associate it to the close button.
-7) The `buttonResetListener` empties both text boxes. Associate it to the reset button.
+6) The `buttonCloseListener` closes the window. Associate it to the "Close" button.
+7) The `buttonResetListener` empties both text boxes. Associate it to the "Reset" button.
 8) The temperature conversion occurs when the user presses enter. Use a `EventHandler<KeyEvent>()` (that you attach with `TextField.setOnKeyPressed`). The `EventHandler<KeyEvent>()` will be notified at each key press.
