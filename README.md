@@ -21,3 +21,4 @@ The aim of this exercise is to create a temperature converter containing:
 6) The `buttonCloseListener` closes the window. Associate it to the "Close" button.
 7) The `buttonResetListener` empties both text boxes. Associate it to the "Reset" button.
 8) The temperature conversion occurs when the user presses enter. Use a `EventHandler<KeyEvent>()` (that you attach with `TextField.setOnKeyPressed`). The `EventHandler<KeyEvent>()` will be notified at each key press.
+9) (Going furhter) Associate a `TextFormatter` to `textFieldF` to ensure a valid character input (e.g., 23, 23.345, -21, 3E -02).
