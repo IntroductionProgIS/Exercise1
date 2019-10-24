@@ -185,9 +185,9 @@ public class TemperatureConverter extends Application
         	public void handle(ActionEvent event) 
         	{
         		/*
-            	 * TODO: 7. Fill in the buttonResetListener in order to empty both text boxes.
-            	 * Associate it to the "Reset" button.
-            	 */	
+        		 * TODO: 7. Fill in the buttonResetListener in order to empty both text boxes.
+        		 * Associate it to the "Reset" button.
+        		 */	
         	}
         };
 
@@ -232,8 +232,6 @@ public class TemperatureConverter extends Application
     	/*
     	 * TODO: 6. The buttonCloseListener closes the window. Associate it to the "Close" button.
     	 */
-    	
-    	
     }
 
     /**
