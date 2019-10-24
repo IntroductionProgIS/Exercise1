@@ -6,6 +6,10 @@ The aim of this exercise is to create a temperature converter containing:
   - **Two text boxes** to enter and display the temperature values
   - **Two buttons** to reset the text boxes and close the window
 
+<p align="center"><img src="/img/tempconvH.jpg" width="300"></p>
+
+1) Download this project.
+
 > *To import this project in eclipse, you should open Eclipse and follow these steps:*
 >  1) *Go to File \> Import...*
 >  2) *Select Git \> Projects from Git*
@@ -13,9 +17,6 @@ The aim of this exercise is to create a temperature converter containing:
 >  4) *Fill the URI box with `https://github.com/IntroductionProgIS/Exercise1.git` (All the other parts should be automatically filled)*
 >  5) *Click on "Next", "Next" and "Finish"*
 
-<p align="center"><img src="/img/tempconvH.jpg" width="300"></p>
-
-1) Download the **TemperatureConverter.java** file.
 2) Complete the function `initGUI()` in the file **TemperatureConverter.java** by using the class `FlowPane` and layout panes of your choice to make the resulting window look like the pictured above.
 3) Make sure the widgets are aligned and that their location remains consistent while resizing the window as in the following picture:
 
