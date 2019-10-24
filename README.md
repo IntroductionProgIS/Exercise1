@@ -8,7 +8,7 @@ The aim of this exercise is to create a temperature converter containing:
 
 <p align="center"><img src="/img/tempconvH.jpg" width="300"></p>
 
-1) Download this project.
+1) Import this project in Eclipse
 
 > *To import this project in eclipse, you should open Eclipse and follow these steps:*
 >  1) *Go to File \> Import...*
