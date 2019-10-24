@@ -7,11 +7,11 @@ The aim of this exercise is to create a temperature converter containing:
   - **Two buttons** to reset the text boxes and close the window
 
 *To import this project in eclipse, you should open Eclipse and follow these steps:*
-  *1) Go to File \> Import...*
-  *2) Select Git \> Projects from Git*
-  *3) Select Clone URI*
-  *4) Fill the URI box with `https://github.com/IntroductionProgIS/Exercise1.git` (All the other parts should be automatically filled)*
-  *5) Click on "Next", "Next" and "Finish"*
+  1) *Go to File \> Import...*
+  2) *Select Git \> Projects from Git*
+  3) *Select Clone URI*
+  4) *Fill the URI box with `https://github.com/IntroductionProgIS/Exercise1.git` (All the other parts should be automatically filled)*
+  5) *Click on "Next", "Next" and "Finish"*
 
 <p align="center"><img src="/img/tempconvH.jpg" width="300"></p>
 
@@ -23,9 +23,9 @@ The aim of this exercise is to create a temperature converter containing:
 
 4) The `textFieldCListener` reads a floating value in the Celsius text box when the user press "enter", converts it from Celsius to Fahrenheit, and writes the result in the Fahrenheit text box. Associate this event handler to the text box of the Celsius value.
 5) Fill in the `textFieldFListener` in order to do the conversion from Fahrenheit to Celsius. Associate it with the text box of the Fahrenheit value.
-6) The `buttonCloseListener` closes the window. Associate it to the "Close" button.
-7) Fill in the `buttonResetListener` in order to empty both text boxes. Associate it to the "Reset" button.
 
 *The temperature conversion occurs when the user presses enter. Use a `EventHandler<KeyEvent>()` (that you attach with `TextField.setOnKeyPressed`). The `EventHandler<KeyEvent>()` will be notified at each key press.*
 
+6) The `buttonCloseListener` closes the window. Associate it to the "Close" button.
+7) Fill in the `buttonResetListener` in order to empty both text boxes. Associate it to the "Reset" button.
 8) (Going furhter) Associate a `TextFormatter` to `textFieldF` to ensure a valid character input (e.g., 23, 23.345, -21, 3E -02).
