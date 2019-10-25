@@ -17,6 +17,8 @@ The aim of this exercise is to create a temperature converter containing:
 >  4) *Fill the URI box with `https://github.com/IntroductionProgIS/Exercise1.git` (All the other parts should be automatically filled)*
 >  5) *Click on "Next", "Next" and "Finish"*
 
+> *See the tasks that you need to do in a project: Go to Eclipse and select Window \> Show View \> Tasks*
+
 2) Complete the function `initGUI()` in the file **TemperatureConverter.java** by using the class `FlowPane` and layout panes of your choice to make the resulting window look like the pictured above.
 3) Make sure the widgets are aligned and that their location remains consistent while resizing the window as in the following picture:
 
